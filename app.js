@@ -23,6 +23,7 @@ const resetGame = () => {
     turnO = true;
     enableBoxes();
     msg.classList.add("hide");
+    
   };
   
 boxes.forEach((box)=>{
@@ -30,9 +31,11 @@ boxes.forEach((box)=>{
         if(turnO===true){
         box.innerText="O";
         turnO=false;
+        box.classList.add("zero")
     }else{
         box.innerText="X";
         turnO=true;
+        box.classList.add("x");
     }
     box.disabled=true;
 
@@ -51,6 +54,8 @@ const disableBoxes = () => {
     for (let box of boxes) {
       box.disabled = false;
       box.innerText = "";
+      box.classList.remove("x");
+      box.classList.remove("zero")
     }
   };
   
